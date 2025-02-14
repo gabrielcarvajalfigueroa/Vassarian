@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7tncfv3tqetp"]
+
+[ext_resource type="Texture2D" uid="uid://d2hqx31jccjws" path="res://assets/FreeKnight_v1(1)/Colour1/Outline/120x80_PNGSheets/_CrouchTransition.png" id="1_uxuum"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_68rtq"]
+radius = 33.0
+height = 114.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(63.25, -24.25)
+scale = Vector2(4, 4.384)
+texture = ExtResource("1_uxuum")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(50, 93)
+shape = SubResource("CapsuleShape2D_68rtq")
