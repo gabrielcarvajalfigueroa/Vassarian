@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://choso8kfjijbs"
-path="res://.godot/imported/VassarianLogo.png-02b9d2e93a7474b030ed01bb40ef1f78.ctex"
+uid="uid://ceppdmfrejev6"
+path="res://.godot/imported/VassarianLogo.png-b0d582f2c70672acb68db641f57734fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/VassarianLogo.png"
-dest_files=["res://.godot/imported/VassarianLogo.png-02b9d2e93a7474b030ed01bb40ef1f78.ctex"]
+source_file="res://VassarianLogo.png"
+dest_files=["res://.godot/imported/VassarianLogo.png-b0d582f2c70672acb68db641f57734fe.ctex"]
 
 [params]
 

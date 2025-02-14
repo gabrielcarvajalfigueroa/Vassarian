@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbgk1253rieul"]
+[gd_scene load_steps=3 format=3 uid="uid://bbgk1253rieul"]
+
+[ext_resource type="Texture2D" uid="uid://b0sw5xscrx3e" path="res://DALL·E 2025-02-14 11.35.34 - Pixel art illustration of Vassarian, known as 'El Fénix', a fallen warrior from 'El Caído de Vaelthar_ Crónicas de la Traición'. He has dark, tousled .webp" id="1_svp17"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_tc7bc"]
 
@@ -16,10 +18,17 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = SubResource("CanvasTexture_tc7bc")
 
+[node name="Dall·e2025-02-1411_35_34-PixelArtIllustrationOfVassarian,KnownAs\'elFénix\',AFallenWarriorFrom\'elCaídoDeVaeltharCrónicasDeLaTraición\'_HeHasDark,Tousled" type="Sprite2D" parent="TextureRect"]
+position = Vector2(577.5, 327)
+scale = Vector2(0.647879, 0.628662)
+texture = ExtResource("1_svp17")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 533.0
+offset_top = 470.0
+offset_right = 629.0
+offset_bottom = 571.0
 
 [node name="StartGameButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
