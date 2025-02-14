@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdteydhxmcnor"]
+
+[ext_resource type="Script" path="res://scenes/options_menu.gd" id="1_2vl5o"]
+[ext_resource type="Texture2D" uid="uid://b0sw5xscrx3e" path="res://DALL·E 2025-02-14 11.35.34 - Pixel art illustration of Vassarian, known as 'El Fénix', a fallen warrior from 'El Caído de Vaelthar_ Crónicas de la Traición'. He has dark, tousled .webp" id="2_rvdjn"]
+[ext_resource type="AudioStream" uid="uid://cnftbraev7wws" path="res://el_caido_de_vaelthar_intro.wav" id="3_vehm4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tc7bc"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2vl5o")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("CanvasTexture_tc7bc")
+
+[node name="Dall·e2025-02-1411_35_34-PixelArtIllustrationOfVassarian,KnownAs\'elFénix\',AFallenWarriorFrom\'elCaídoDeVaeltharCrónicasDeLaTraición\'_HeHasDark,Tousled" type="Sprite2D" parent="TextureRect"]
+position = Vector2(577.5, 327)
+scale = Vector2(0.647879, 0.628662)
+texture = ExtResource("2_rvdjn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 470.0
+offset_right = 629.0
+offset_bottom = 571.0
+
+[node name="VolumeButtom" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Volume"
+
+[node name="ResolutionButtom" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Resolution"
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="ElCaidoDeVaeltharIntro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vehm4")
+
+[connection signal="pressed" from="VBoxContainer/VolumeButtom" to="." method="_on_volume_buttom_pressed"]
+[connection signal="pressed" from="VBoxContainer/ResolutionButtom" to="." method="_on_resolution_buttom_pressed"]
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
