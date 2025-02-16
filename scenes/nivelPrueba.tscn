@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhg1ocf4gvjdb"]
+
+[ext_resource type="Texture2D" uid="uid://kp8sgcfjoscd" path="res://assets/Characters Pack (1)/Characters Pack/Without Outline/WarriorMan-Sheet.png" id="1_o2lk5"]
+
+[sub_resource type="Animation" id="Animation_0twjd"]
+length = 0.7
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(16, -0.0005, 0, 0.0005, 0, 17, -0.0005, 0, 0.0005, 0, 18, -0.25, 0, 0.25, 0, 18, -0.25, 0, 0.25, 0, 19, -0.25, 0, 0.25, 0, 20, -0.25, 0, 0.25, 0, 21, -0.25, 0, 0.25, 0, 22, -0.25, 0, 0.25, 0, 23, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.0666667, 0.0333333, 0.1, 0.166667, 0.3, 0.366667, 0.5, 0.6, 0.7)
+}
+
+[sub_resource type="Animation" id="Animation_tucwv"]
+resource_name = "new_animation"
+length = 0.5
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fidrn"]
+_data = {
+"RESET": SubResource("Animation_0twjd"),
+"new_animation": SubResource("Animation_tucwv")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_di86y"]
+size = Vector2(13, 26)
+
+[node name="NivelPrueba" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_o2lk5")
+hframes = 16
+vframes = 25
+frame = 16
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_fidrn")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(3.5, 3)
+shape = SubResource("RectangleShape2D_di86y")
