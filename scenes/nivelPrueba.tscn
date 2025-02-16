@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhg1ocf4gvjdb"]
+
+[ext_resource type="Texture2D" uid="uid://kp8sgcfjoscd" path="res://assets/Characters Pack (1)/Characters Pack/Without Outline/WarriorMan-Sheet.png" id="1_o2lk5"]
+
+[sub_resource type="Animation" id="Animation_tucwv"]
+resource_name = "new_animation"
+length = 0.5
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_0twjd"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fidrn"]
+_data = {
+"RESET": SubResource("Animation_0twjd"),
+"new_animation": SubResource("Animation_tucwv")
+}
+
+[node name="NivelPrueba" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_o2lk5")
+hframes = 16
+vframes = 25
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_fidrn")
+}
