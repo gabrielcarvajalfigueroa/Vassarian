@@ -2453,7 +2453,6 @@ collision_visibility_mode = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="layer/TileMapLayer2"]
 position = Vector2(-40, -33.7305)
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="layer/TileMapLayer2/StaticBody2D"]
 position = Vector2(-45, 139.741)
