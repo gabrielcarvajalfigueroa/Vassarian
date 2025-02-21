@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=3 uid="uid://c7bkbkvkrhcfc"]
+
+[ext_resource type="Texture2D" uid="uid://dmkf0slnf38d2" path="res://assets/Skeleton enemy/Skeleton enemy.png" id="1_atofb"]
+
+[sub_resource type="Animation" id="Animation_3fdid"]
+resource_name = "iddle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [39, 40, 41, 42]
+}
+
+[sub_resource type="Animation" id="Animation_r35yp"]
+resource_name = "attack"
+
+[sub_resource type="Animation" id="Animation_im51b"]
+resource_name = "hit"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [52, 53, 54]
+}
+
+[sub_resource type="Animation" id="Animation_x8g13"]
+resource_name = "dead"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.233333, 0.333333, 0.466667, 0.533333, 0.6, 0.666667, 0.733333, 0.8, 0.866667, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+}
+
+[sub_resource type="Animation" id="Animation_tx7lb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [39]
+}
+
+[sub_resource type="Animation" id="Animation_jx5bn"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.233333, 0.3, 0.366667, 0.433333, 0.533333, 0.633333, 0.733333, 0.833333, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gu1x4"]
+_data = {
+"RESET": SubResource("Animation_tx7lb"),
+"attack": SubResource("Animation_r35yp"),
+"dead": SubResource("Animation_x8g13"),
+"hit": SubResource("Animation_im51b"),
+"iddle": SubResource("Animation_3fdid"),
+"walk": SubResource("Animation_jx5bn")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_atofb")
+hframes = 13
+vframes = 5
+frame = 39
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gu1x4")
+}

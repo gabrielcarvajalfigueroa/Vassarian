@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://kp8sgcfjoscd" path="res://assets/Characters Pack (1)/Characters Pack/Without Outline/WarriorMan-Sheet.png" id="1_d5rq2"]
 [ext_resource type="Script" path="res://scenes/characters/player.gd" id="1_t52dq"]
-[ext_resource type="Script" path="res://scenes/scripts/hit_box_component.gd" id="3_ybb85"]
+[ext_resource type="Script" path="res://scenes/characters/hit_box_component.gd" id="3_ybb85"]
 [ext_resource type="Script" path="res://scenes/characters/health_component.gd" id="4_6td15"]
 
 [sub_resource type="Animation" id="Animation_gkbdi"]
@@ -206,23 +206,6 @@ tracks/0/keys = {
 "values": [48, 49, 50, 51, 52, 53, 54, 55]
 }
 
-[sub_resource type="Animation" id="Animation_a46qi"]
-resource_name = "Walk"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.233333, 0.333333, 0.433333, 0.533333, 0.633333, 0.733333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [32, 33, 34, 35, 36, 37, 38, 39]
-}
-
 [sub_resource type="Animation" id="Animation_0yfjv"]
 resource_name = "Tulasito"
 length = 1.5
@@ -274,6 +257,23 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(2, 2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a46qi"]
+resource_name = "Walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.233333, 0.333333, 0.433333, 0.533333, 0.633333, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [32, 33, 34, 35, 36, 37, 38, 39]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fidrn"]
